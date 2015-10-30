@@ -1,6 +1,8 @@
 # Dotfiles
 
-My OSX / Ubuntu dotfiles.
+My dotfiles based on those by Ben Alman [cowboy](https://github.com/cowboy/dotfiles)
+
+# Original README:
 
 ## About this project
 
