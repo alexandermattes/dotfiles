@@ -62,3 +62,6 @@ Desktop.ini
 .swo
 .*.swp
 .*.swo
+
+# Kate
+.*.kate-swp
