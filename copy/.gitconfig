@@ -1,6 +1,0 @@
-[user]
-    name = Alexander Mattes
-[color]
-    ui = auto
-[core]
-    excludesfile = /home/alex/.gitignore_global
