@@ -22,11 +22,26 @@ let g:mapleader = ','
 " Use normal system clippboard (Ctrl-C, Ctrl-V)
 set clipboard=unnamedplus
 
+" Enable mouse use in all modes
+set mouse=a
+
 " Hides buffers instead of closing them
 set hidden
 
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
+
+" Reload unmodified files if a change from outside is detected
+set autoread
+
+" Create vimrc autocmd group and remove any existing vimrc autocmds,
+" in case .vimrc is re-sourced.
+augroup vimrc
+  autocmd!
+augroup END
+
+" Trigger autoread whenever a Buffer is switched or vim is refocused
+" au FocusGained,BufEnter * :silent! !
 
 
 """""""""""""""""""""""""""""""""""""""""
@@ -49,6 +64,13 @@ endif
 " Show line numbers
 set number
 
+" Use relative line numbers by default
+set relativenumber
+
+" Switch to absolute numbers in insert mode and relative line numbers elsewhere
+autocmd vimrc InsertEnter * :set norelativenumber
+autocmd vimrc InsertLeave * :set relativenumber
+
 " Show position
 set ruler
 
@@ -60,20 +82,72 @@ set wildmenu
 set wildmode=longest:full,full
 set wildignore=*.o,*~,*.pyc
 
+" Don't show the current mode (airline.vim takes care of us)
+
+set noshowmode 
+
 " Height of command bar
 set cmdheight=1
 
 " Always show status line
 set laststatus=2
 
+" Minimum padding of current line to top and bottom
+set scrolloff=5
+
+" Minimum padding of cursor to left and right border
+set scrolloff=5
+
+
+" Open new split panes to right and bottom
+set splitbelow
+set splitright
+
 
 """""""""""""""""""""""""""""""""""""""""
 " => Mappings
 """""""""""""""""""""""""""""""""""""""""
 
+" Treat long lines as break lines (useful when moving around in them)
+map j gj
+map k gk
+
+" Temporarily disable search highlighting until the next search
+map <silent> <leader>/ :nohlsearch<cr>
+
+" " Easier Navigation between splits | Alternative to vim-tmux-navigator
+" nnoremap <C-J> <C-W><C-J>
+" nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-H> <C-W><C-H>
+
+" Easier saving of current buffer
+map <leader>w :w<cr>
+
+" Easier closing of current split
+map <leader>q :q<cr>
+
+" Easier creation of splits
+map <leader>sp :sp<cr>
+
+" Easier creation of splits
+map <leader>vsp :vsp<cr>
+
+" Easier handling of buffers
+map <leader>bn :bn<cr>
+map <leader>bp :bp<cr>
+map <leader>bd :bd<cr>
+
+" Easier use of explore
+map <leader>e :E<cr>
+
+
 """""""""""""""""""""""""""""""""""""""""
 " => Text, tab ind indent related
 """""""""""""""""""""""""""""""""""""""""
+
+" Fix backspace
+set backspace=indent,eol,start
 
 " Linebreaking
 set textwidth=200
@@ -87,6 +161,9 @@ set tabstop=8
 
 " How many spaces are inserted when you press tab
 set shiftwidth=4
+
+" Behaviour depends on position
+set smarttab
 
 " Take indentation from previous line
 set autoindent
@@ -104,7 +181,7 @@ endif
 " Ignore case when searching
 set ignorecase
 
-" When searching try to be smart about cases 
+" Ignore 'ignorecase' if search pattern contains uppercase characters
 set smartcase
 
 " Highlight search results
@@ -119,7 +196,7 @@ set incsearch
 """""""""""""""""""""""""""""""""""""""""
 
 " The colorscheme
-colorscheme desert
+colorscheme molokai
 
 " Tell vim what the background color looks like
 set background=dark
@@ -135,7 +212,7 @@ set t_Co=256
 " https://github.com/junegunn/vim-plug
 " Reload .vimrc and :PlugInstall to install plugins.
 call plug#begin('~/.vim/plugged')
-" Plug 'bling/vim-airline'
+Plug 'bling/vim-airline'
 " Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround' " Surround objects with tags,{,[,( etc. using ys, cs, ds etc.
 " Plug 'tpope/vim-fugitive'
@@ -158,4 +235,42 @@ Plug 'tpope/vim-commentary' " Add comments with gc
 " Plug 'klen/python-mode', {'for': 'python'}
 " Plug 'terryma/vim-multiple-cursors'
 " Plug 'wting/rust.vim', {'for': 'rust'}
+Plug 'edkolev/tmuxline.vim' " Use the vim-airline status line in tmux
+Plug 'christoomey/vim-tmux-navigator' " Seamless navigation between vim an tmux
+Plug 'benmills/vimux' " Send commands from vim to tmux
 call plug#end()
+
+
+"""""""""""""""""""""""""""""""""""""""""
+" => Plugin Settings
+"""""""""""""""""""""""""""""""""""""""""
+
+" vim-airline """""""""""""""""""""""""""
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tmuxline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
+let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
+
+
+" vimux """""""""""""""""""""""""""""""""
+
+" Prompt for a command to run
+map <Leader>vp :VimuxPromptCommand<CR>
+
+" Run last command executed by VimuxRunCommand
+map <Leader>vl :VimuxRunLastCommand<CR>
+
+" Inspect runner pane
+map <Leader>vi :VimuxInspectRunner<CR>
+
+" Close vim tmux runner opened by VimuxRunCommand
+map <Leader>vq :VimuxCloseRunner<CR>
+
+" Interrupt any command running in the runner pane
+map <Leader>vx :VimuxInterruptRunner<CR>
+
+" Zoom the runner pane (use <bind-key> z to restore runner pane)
+map <Leader>vz :call VimuxZoomRunner()<CR>
+
+
+
