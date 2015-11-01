@@ -9,3 +9,6 @@ is_ubuntu || return 1
 
 # Make 'less' more.
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# Fix colors in tmux
+alias tmux='tmux -2 '
