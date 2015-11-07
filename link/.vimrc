@@ -274,6 +274,7 @@ Plug 'christoomey/vim-tmux-navigator' " Seamless navigation between vim an tmux
 Plug 'benmills/vimux' " Send commands from vim to tmux
 " Plug 'Valloric/YouCompleteMe' " Code-completion
 Plug 'Twinside/vim-hoogle' " Haskell Hoogle Search
+Plug 'yonchu/accelerated-smooth-scroll' " Smooth scrolling for <C-D>/<C-U> and <C-F>/<C-B>
 call plug#end()
 
 
