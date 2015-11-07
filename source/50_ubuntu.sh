@@ -11,4 +11,4 @@ alias search="apt-cache search"
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # Fix colors in tmux
-alias tmux='tmux -2 '
+alias tmux='TERM=xterm-256color tmux' 
