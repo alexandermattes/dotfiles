@@ -246,10 +246,10 @@ highlight CursorLineNr cterm=bold
 " https://github.com/junegunn/vim-plug
 " Reload .vimrc and :PlugInstall to install plugins.
 call plug#begin('~/.vim/plugged')
-Plug 'bling/vim-airline'
+Plug 'bling/vim-airline' " Statusline
 " Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround' " Surround objects with tags,{,[,( etc. using ys, cs, ds etc.
-" Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive' " Git Wrapper
 " Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-repeat' " Allow to use . for some other plugins
 Plug 'tpope/vim-commentary' " Add comments with gc
@@ -272,6 +272,8 @@ Plug 'tpope/vim-commentary' " Add comments with gc
 Plug 'edkolev/tmuxline.vim' " Use the vim-airline status line in tmux
 Plug 'christoomey/vim-tmux-navigator' " Seamless navigation between vim an tmux
 Plug 'benmills/vimux' " Send commands from vim to tmux
+" Plug 'Valloric/YouCompleteMe' " Code-completion
+Plug 'Twinside/vim-hoogle' " Haskell Hoogle Search
 call plug#end()
 
 
