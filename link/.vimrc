@@ -64,12 +64,18 @@ endif
 " Show line numbers
 set number
 
-" Use relative line numbers by default
-set relativenumber
+" Use absolute line numbers by default
+set norelativenumber
 
-" Switch to absolute numbers in insert mode and relative line numbers elsewhere
-autocmd vimrc InsertEnter * :set norelativenumber
-autocmd vimrc InsertLeave * :set relativenumber
+" " Use relative line numbers by default
+" set relativenumber
+
+" " Switch to absolute numbers in insert mode and relative line numbers elsewhere
+" autocmd vimrc InsertEnter * :set norelativenumber
+" autocmd vimrc InsertLeave * :set relativenumber
+
+" Highlight current line
+set cursorline
 
 " Show position
 set ruler
@@ -97,7 +103,6 @@ set scrolloff=5
 
 " Minimum padding of cursor to left and right border
 set scrolloff=5
-
 
 " Open new split panes to right and bottom
 set splitbelow
@@ -195,14 +200,20 @@ set incsearch
 " => Design
 """""""""""""""""""""""""""""""""""""""""
 
+" Use 256 colors
+set t_Co=256
+
 " The colorscheme
 colorscheme molokai
 
 " Tell vim what the background color looks like
 set background=dark
 
-" Use 256 colors
-set t_Co=256
+" Only highlight the current line number, not the line itself
+highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+
+" Make higlighted current line number bold
+highlight CursorLineNr cterm=bold
 
 
 """""""""""""""""""""""""""""""""""""""""
