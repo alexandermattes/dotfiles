@@ -126,25 +126,32 @@ map <silent> <leader>/ :nohlsearch<cr>
 " nnoremap <C-L> <C-W><C-L>
 " nnoremap <C-H> <C-W><C-H>
 
-" Easier saving of current buffer
-map <leader>w :w<cr>
+" Easier saving of current window
+nnoremap <leader>w :w<cr>
 
-" Easier closing of current split
-map <leader>q :q<cr>
-
-" Easier creation of splits
-map <leader>sp :sp<cr>
+" Easier closing of current window
+nnoremap <leader>q :q<cr>
 
 " Easier creation of splits
-map <leader>vsp :vsp<cr>
+nnoremap <leader>sp :sp<cr>
+nnoremap <leader>vsp :vsp<cr>
 
 " Easier handling of buffers
-map <leader>bn :bn<cr>
-map <leader>bp :bp<cr>
-map <leader>bd :bd<cr>
+nnoremap <leader>b :ls<CR>:b<Space>
+nnoremap <leader>ls :ls<cr>
+
+" Easier handling of tabs
+nnoremap <leader>t :tabs<CR>:tab<Space>
 
 " Easier use of explore
-map <leader>e :E<cr>
+nnoremap <leader>e :E<cr>
+
+" Change working directory to the directory of the current file
+nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
+
+" Easier replacing
+nnoremap <leader>\ :%s//gc<Left><Left><Left>
+vnoremap <leader>\ :s//gc<Left><Left><Left>
 
 
 """""""""""""""""""""""""""""""""""""""""
@@ -177,6 +184,22 @@ set autoindent
 if has('autocmd')
   filetype plugin indent on
 endif
+
+
+"""""""""""""""""""""""""""""""""""""""""
+" => Functions
+"""""""""""""""""""""""""""""""""""""""""
+
+" Enhanced incrementing of numbers, see http://vim.wikia.com/wiki/Making_a_list_of_numbers
+function! Incr()
+  let a = line('.') - line("'<")
+  let c = virtcol("'<")
+  if a > 0
+    execute 'normal! '.c.'|'.a."\<C-a>"
+  endif
+  normal `<
+endfunction
+vnoremap <C-a> :call Incr()<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""
