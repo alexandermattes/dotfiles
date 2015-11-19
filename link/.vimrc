@@ -238,6 +238,9 @@ highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 " Make higlighted current line number bold
 highlight CursorLineNr cterm=bold
 
+" Change highlighting of matching brackets
+hi MatchParen ctermfg=208  ctermbg=233 cterm=bold
+
 
 """""""""""""""""""""""""""""""""""""""""
 " => Advanced
