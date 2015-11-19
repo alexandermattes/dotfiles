@@ -240,6 +240,14 @@ highlight CursorLineNr cterm=bold
 
 
 """""""""""""""""""""""""""""""""""""""""
+" => Advanced
+"""""""""""""""""""""""""""""""""""""""""
+
+" Set compiler for haskell files
+au BufEnter *.hs compiler ghc
+
+
+"""""""""""""""""""""""""""""""""""""""""
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""
 
@@ -253,8 +261,9 @@ Plug 'tpope/vim-fugitive' " Git Wrapper
 " Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-repeat' " Allow to use . for some other plugins
 Plug 'tpope/vim-commentary' " Add comments with gc
-" Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-unimpaired' " Mappings for complementary pairs of  commands
 " Plug 'tpope/vim-eunuch'
+Plug 'Shougo/vimproc.vim' "  Interactive command execution in Vim. Needed by ghcmod-vim
 " Plug 'scrooloose/nerdtree'
 " Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'editorconfig/editorconfig-vim'
@@ -272,9 +281,16 @@ Plug 'tpope/vim-commentary' " Add comments with gc
 Plug 'edkolev/tmuxline.vim' " Use the vim-airline status line in tmux
 Plug 'christoomey/vim-tmux-navigator' " Seamless navigation between vim an tmux
 Plug 'benmills/vimux' " Send commands from vim to tmux
-" Plug 'Valloric/YouCompleteMe' " Code-completion
-Plug 'Twinside/vim-hoogle' " Haskell Hoogle Search
+Plug 'Valloric/YouCompleteMe' " Code-completion
 Plug 'yonchu/accelerated-smooth-scroll' " Smooth scrolling for <C-D>/<C-U> and <C-F>/<C-B>
+Plug 'Twinside/vim-hoogle' " Haskell Hoogle Search
+Plug 'lukerandall/haskellmode-vim' " Haskell.
+" Plug 'dag/vim2hs' " A collection of vimscripts for Haskell development
+Plug 'bitc/vim-hdevtools' " Use Haskell hdevtools background server
+Plug 'eagletmt/ghcmod-vim' " ghc-mod in vim
+Plug 'eagletmt/neco-ghc' " A completion plugin for Haskell, using ghc-mod
+Plug 'scrooloose/syntastic' " Syntax checking
+" Plug 'majutsushi/tagbar' " Vim plugin that displays tags in a window, ordered by scope
 call plug#end()
 
 
@@ -310,4 +326,23 @@ map <Leader>vx :VimuxInterruptRunner<CR>
 map <Leader>vz :call VimuxZoomRunner()<CR>
 
 
+" syntastic """""""""""""""""""""""""""""""""
+let g:syntastic_warning_symbol = "⚠"
+let g:syntastic_error_symbol = "✗"
 
+
+" haskellmode-vim  """""""""""""""""""""""""""""""""
+let g:haddock_browser="/usr/bin/firefox"
+
+
+" neco-ghc  """""""""""""""""""""""""""""""""
+
+" Disable haskell-vim omnifunc
+let g:haskellmode_completion_ghc = 0
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
+
+" YouCompleteMe  """""""""""""""""""""""""""""""""
+"
+"  For neco-ghc needed?
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
