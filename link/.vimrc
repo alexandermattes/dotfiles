@@ -43,6 +43,10 @@ augroup END
 " Trigger autoread whenever a Buffer is switched or vim is refocused
 " au FocusGained,BufEnter * :silent! !
 
+" Reduce delay when pressing esc
+set timeoutlen=1000 
+set ttimeoutlen=0
+
 
 """""""""""""""""""""""""""""""""""""""""
 " => Files
