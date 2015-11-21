@@ -285,6 +285,7 @@ Plug 'Shougo/vimproc.vim' "  Interactive command execution in Vim. Needed by ghc
 " Plug 'klen/python-mode', {'for': 'python'}
 " Plug 'terryma/vim-multiple-cursors'
 " Plug 'wting/rust.vim', {'for': 'rust'}
+" Plug 'edkolev/promptline.vim' " Generate promt with airline colors
 Plug 'edkolev/tmuxline.vim' " Use the vim-airline status line in tmux
 Plug 'christoomey/vim-tmux-navigator' " Seamless navigation between vim an tmux
 Plug 'benmills/vimux' " Send commands from vim to tmux
@@ -350,6 +351,6 @@ autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
 
 " YouCompleteMe  """""""""""""""""""""""""""""""""
-"
+
 "  For neco-ghc needed?
 let g:ycm_semantic_triggers = {'haskell' : ['.']}
