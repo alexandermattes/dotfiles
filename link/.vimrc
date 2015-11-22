@@ -265,7 +265,7 @@ Plug 'bling/vim-airline' " Statusline
 " Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround' " Surround objects with tags,{,[,( etc. using ys, cs, ds etc.
 Plug 'tpope/vim-fugitive' " Git Wrapper
-Plug 'airblade/vim-gitgutter' " Shows a git diff in the gutter and stages/reverts hunks
+" Plug 'airblade/vim-gitgutter' " Shows a git diff in the gutter and stages/reverts hunks
 " Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-repeat' " Allow to use . for some other plugins
 Plug 'tpope/vim-commentary' " Add comments with gc
@@ -300,6 +300,7 @@ Plug 'eagletmt/ghcmod-vim' " ghc-mod in vim
 Plug 'eagletmt/neco-ghc' " A completion plugin for Haskell, using ghc-mod
 Plug 'scrooloose/syntastic' " Syntax checking
 " Plug 'majutsushi/tagbar' " Vim plugin that displays tags in a window, ordered by scope
+Plug 'ntpeters/vim-better-whitespace' " Show and remove trailing whitespace
 call plug#end()
 
 
