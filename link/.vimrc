@@ -44,7 +44,7 @@ augroup END
 " au FocusGained,BufEnter * :silent! !
 
 " Reduce delay when pressing esc
-set timeoutlen=1000 
+set timeoutlen=1000
 set ttimeoutlen=0
 
 
@@ -94,7 +94,7 @@ set wildignore=*.o,*~,*.pyc
 
 " Don't show the current mode (airline.vim takes care of us)
 
-set noshowmode 
+set noshowmode
 
 " Height of command bar
 set cmdheight=1
