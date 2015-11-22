@@ -112,6 +112,9 @@ set scrolloff=5
 set splitbelow
 set splitright
 
+" How to display diffs
+set diffopt+=vertical
+
 
 """""""""""""""""""""""""""""""""""""""""
 " => Mappings
