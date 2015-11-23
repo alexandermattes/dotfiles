@@ -140,8 +140,8 @@ nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
 
 " Easier creation of splits
-nnoremap <leader>sp :sp<cr>
-nnoremap <leader>vsp :vsp<cr>
+nnoremap <leader>sp :split<cr>
+nnoremap <leader>vsp :vsplit<cr>
 
 " Easier handling of buffers
 nnoremap <leader>b :ls<CR>:b<Space>
@@ -151,7 +151,7 @@ nnoremap <leader>ls :ls<cr>
 nnoremap <leader>t :tabs<CR>:tab<Space>
 
 " Easier use of explore
-nnoremap <leader>e :E<cr>
+nnoremap <leader>e :Explore<cr>
 
 " Change working directory to the directory of the current file
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
