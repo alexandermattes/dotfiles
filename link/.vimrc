@@ -304,6 +304,7 @@ Plug 'eagletmt/neco-ghc' " A completion plugin for Haskell, using ghc-mod
 Plug 'scrooloose/syntastic' " Syntax checking
 " Plug 'majutsushi/tagbar' " Vim plugin that displays tags in a window, ordered by scope
 Plug 'ntpeters/vim-better-whitespace' " Show and remove trailing whitespace
+Plug 'godlygeek/tabular' " Align text
 call plug#end()
 
 
