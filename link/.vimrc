@@ -248,6 +248,9 @@ highlight CursorLineNr cterm=bold
 " Change highlighting of matching brackets
 hi MatchParen ctermfg=208  ctermbg=233 cterm=bold
 
+" How to display invisible charakter when 'list' ist set
+set listchars=tab:▸\ ,eol:¬
+
 
 """""""""""""""""""""""""""""""""""""""""
 " => Advanced
@@ -366,3 +369,9 @@ let g:ycm_semantic_triggers = {'haskell' : ['.']}
 " indentLine  """""""""""""""""""""""""""""""""
 let g:indentLine_char = '┊'
 
+
+" vim-better-whitespace  """""""""""""""""""""""""""""""""
+
+" Disable highlighting in current line in insertmode
+autocmd vimrc InsertEnter * :CurrentLineWhitespaceOff hard
+autocmd vimrc InsertLeave * :CurrentLineWhitespaceOn
