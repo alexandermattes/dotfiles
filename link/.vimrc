@@ -305,6 +305,7 @@ Plug 'scrooloose/syntastic' " Syntax checking
 " Plug 'majutsushi/tagbar' " Vim plugin that displays tags in a window, ordered by scope
 Plug 'ntpeters/vim-better-whitespace' " Show and remove trailing whitespace
 Plug 'godlygeek/tabular' " Align text
+Plug 'Yggdroot/indentLine' " Display the indention levels with thin vertical lines
 call plug#end()
 
 
@@ -360,3 +361,8 @@ autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
 "  For neco-ghc needed?
 let g:ycm_semantic_triggers = {'haskell' : ['.']}
+
+
+" indentLine  """""""""""""""""""""""""""""""""
+let g:indentLine_char = '┊'
+
