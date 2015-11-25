@@ -300,7 +300,7 @@ Plug 'Valloric/YouCompleteMe' " Code-completion
 Plug 'yonchu/accelerated-smooth-scroll' " Smooth scrolling for <C-D>/<C-U> and <C-F>/<C-B>
 Plug 'Twinside/vim-hoogle' " Haskell Hoogle Search
 Plug 'lukerandall/haskellmode-vim' " Haskell.
-" Plug 'dag/vim2hs' " A collection of vimscripts for Haskell development
+Plug 'dag/vim2hs' " A collection of vimscripts for Haskell development
 Plug 'bitc/vim-hdevtools' " Use Haskell hdevtools background server
 Plug 'eagletmt/ghcmod-vim' " ghc-mod in vim
 Plug 'eagletmt/neco-ghc' " A completion plugin for Haskell, using ghc-mod
@@ -350,6 +350,13 @@ map <Leader>vz :call VimuxZoomRunner()<CR>
 " syntastic """""""""""""""""""""""""""""""""
 let g:syntastic_warning_symbol = "⚠"
 let g:syntastic_error_symbol = "✗"
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 0
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 
 " haskellmode-vim  """""""""""""""""""""""""""""""""
@@ -385,6 +392,12 @@ let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": ":.2"}
 let g:slime_dont_ask_default = 1
 let g:slime_no_mappings = 0
+
+
+" vim2hs  """""""""""""""""""""""""""""""""
+let g:haskell_conceal = 0
+let g:haskell_conceal_enumerations = 0
+let g:haskell_multiline_strings = 0
 
 
 " ultisnip  """""""""""""""""""""""""""""""""
