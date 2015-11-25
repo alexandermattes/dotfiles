@@ -309,6 +309,7 @@ Plug 'scrooloose/syntastic' " Syntax checking
 Plug 'ntpeters/vim-better-whitespace' " Show and remove trailing whitespace
 Plug 'godlygeek/tabular' " Align text
 Plug 'Yggdroot/indentLine' " Display the indention levels with thin vertical lines
+Plug 'jpalardy/vim-slime' " Send text to an REPL using tmux
 call plug#end()
 
 
@@ -375,3 +376,11 @@ let g:indentLine_char = '┊'
 " Disable highlighting in current line in insertmode
 autocmd vimrc InsertEnter * :CurrentLineWhitespaceOff hard
 autocmd vimrc InsertLeave * :CurrentLineWhitespaceOn
+
+
+" vim-slime  """""""""""""""""""""""""""""""""
+let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": "default", "target_pane": ":.2"}
+let g:slime_dont_ask_default = 1
+let g:slime_no_mappings = 0
+
