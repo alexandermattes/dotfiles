@@ -308,6 +308,8 @@ Plug 'scrooloose/syntastic' " Syntax checking
 " Plug 'majutsushi/tagbar' " Vim plugin that displays tags in a window, ordered by scope
 Plug 'ntpeters/vim-better-whitespace' " Show and remove trailing whitespace
 Plug 'godlygeek/tabular' " Align text
+Plug 'sirver/ultisnips' " The ultimate snippet solution for Vim
+Plug 'honza/vim-snippets' " Snippets
 Plug 'Yggdroot/indentLine' " Display the indention levels with thin vertical lines
 Plug 'jpalardy/vim-slime' " Send text to an REPL using tmux
 call plug#end()
@@ -384,3 +386,9 @@ let g:slime_default_config = {"socket_name": "default", "target_pane": ":.2"}
 let g:slime_dont_ask_default = 1
 let g:slime_no_mappings = 0
 
+
+" ultisnip  """""""""""""""""""""""""""""""""
+" let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" let g:UltiSnipsEditSplit="vertical"
