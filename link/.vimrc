@@ -158,7 +158,7 @@ nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 
 " Easier replacing
 nnoremap <leader>\ :%s//gc<Left><Left><Left>
-vnoremap <leader>\ :s//gc<Left><Left><Left>
+vnoremap <leader>\ :s/\%V/gc<Left><Left><Left>
 
 
 """""""""""""""""""""""""""""""""""""""""
