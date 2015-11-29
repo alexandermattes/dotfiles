@@ -1,10 +1,17 @@
-
 """""""""""""""""""""""""""""""""""""""""
-" => General
+" => Compatibility
 """""""""""""""""""""""""""""""""""""""""
 
 " don't need to be compatible with old vim
 set nocompatible
+
+" Apply sensible.vim first, allows overriding
+runtime! plugin/sensible.vim
+
+
+"""""""""""""""""""""""""""""""""""""""""
+" => General
+"""""""""""""""""""""""""""""""""""""""""
 
 " Set default encoding
 set encoding=utf8
@@ -272,8 +279,8 @@ au BufEnter *.hs compiler ghc
 " https://github.com/junegunn/vim-plug
 " Reload .vimrc and :PlugInstall to install plugins.
 call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-sensible' " Defaults everyone can agree on
 Plug 'bling/vim-airline' " Statusline
-" Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround' " Surround objects with tags,{,[,( etc. using ys, cs, ds etc.
 Plug 'tpope/vim-fugitive' " Git Wrapper
 " Plug 'airblade/vim-gitgutter' " Shows a git diff in the gutter and stages/reverts hunks
