@@ -47,6 +47,11 @@ augroup END
 set timeoutlen=1000
 set ttimeoutlen=0
 
+" Configure persistant undo
+set undofile
+set undolevels=1000 "maximum number of changes that can be undone
+set undoreload=10000 "maximum number lines to save for undo on a buffer reload
+
 
 """""""""""""""""""""""""""""""""""""""""
 " => Files
@@ -312,6 +317,7 @@ Plug 'sirver/ultisnips' " The ultimate snippet solution for Vim
 Plug 'honza/vim-snippets' " Snippets
 Plug 'Yggdroot/indentLine' " Display the indention levels with thin vertical lines
 Plug 'jpalardy/vim-slime' " Send text to an REPL using tmux
+Plug 'mbbill/undotree' " Visualize vim's undo tree
 call plug#end()
 
 
