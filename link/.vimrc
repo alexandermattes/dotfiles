@@ -1,6 +1,6 @@
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Compatibility
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " don't need to be compatible with old vim
 set nocompatible
@@ -9,9 +9,9 @@ set nocompatible
 runtime! plugin/sensible.vim
 
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set default encoding
 set encoding=utf8
@@ -57,9 +57,9 @@ set undolevels=1000 "maximum number of changes that can be undone
 set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Local dirs
 if !has('win32')
@@ -70,9 +70,9 @@ if !has('win32')
 endif
 
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Show line numbers
 set number
@@ -80,10 +80,10 @@ set number
 " Use absolute line numbers by default
 set norelativenumber
 
-" " Use relative line numbers by default
+" Use relative line numbers by default
 " set relativenumber
 
-" " Switch to absolute numbers in insert mode and relative line numbers elsewhere
+" Switch to absolute numbers in insert mode and relative line numbers elsewhere
 " autocmd vimrc InsertEnter * :set norelativenumber
 " autocmd vimrc InsertLeave * :set relativenumber
 
@@ -102,7 +102,6 @@ set wildmode=longest:full,full
 set wildignore=*.o,*~,*.pyc
 
 " Don't show the current mode (airline.vim takes care of us)
-
 set noshowmode
 
 " Height of command bar
@@ -125,9 +124,9 @@ set splitright
 set diffopt+=vertical
 
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Mappings
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Treat long lines as break lines (useful when moving around in them)
 map j gj
@@ -160,7 +159,7 @@ nnoremap <leader>b :ls<CR>:b<Space>
 nnoremap <leader>t :tabs<CR>:tab<Space>
 
 " Easier use of explore
-nnoremap <leader>e :Explore<cr>
+" nnoremap <leader>e :Explore<cr>
 
 " Change working directory to the directory of the current file
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
@@ -170,17 +169,17 @@ nnoremap <leader>\ :%s//gc<Left><Left><Left>
 vnoremap <leader>\ :s/\%V/gc<Left><Left><Left>
 
 " Toggle spell checking
-nmap <silent> <leader>s :set spell!<CR>
+nnoremap <silent> <leader>s :set spell!<CR>
 
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab ind indent related
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Fix backspace
 set backspace=indent,eol,start
 
-" Linebreaking
+" Line breaking
 set textwidth=200
 set linebreak
 
@@ -199,15 +198,15 @@ set smarttab
 " Take indentation from previous line
 set autoindent
 
-" File-type basend indentation
+" File-type based indentation
 if has('autocmd')
   filetype plugin indent on
 endif
 
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Functions
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Enhanced incrementing of numbers, see http://vim.wikia.com/wiki/Making_a_list_of_numbers
 function! Incr()
@@ -221,9 +220,9 @@ endfunction
 vnoremap <C-a> :call Incr()<CR>
 
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Search
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Ignore case when searching
 set ignorecase
@@ -238,14 +237,14 @@ set hlsearch
 set incsearch
 
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Design
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Use 256 colors
 set t_Co=256
 
-" The colorscheme
+" The color scheme
 colorscheme molokai
 
 " Tell vim what the background color looks like
@@ -254,42 +253,76 @@ set background=dark
 " Only highlight the current line number, not the line itself
 highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 
-" Make higlighted current line number bold
+" Make highlighted current line number bold
 highlight CursorLineNr cterm=bold
 
 " Change highlighting of matching brackets
 highlight MatchParen ctermfg=208  ctermbg=233 cterm=bold
 
-" How to display invisible charakter when 'list' ist set
+" How to display invisible character when 'list' is set
 set listchars=tab:▸\ ,eol:¬
 
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Advanced
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set compiler for haskell files
 au BufEnter *.hs compiler ghc
 
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " https://github.com/junegunn/vim-plug
 " Reload .vimrc and :PlugInstall to install plugins.
 call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-sensible' " Defaults everyone can agree on
-Plug 'bling/vim-airline' " Statusline
-Plug 'tpope/vim-surround' " Surround objects with tags,{,[,( etc. using ys, cs, ds etc.
-Plug 'tpope/vim-fugitive' " Git Wrapper
-" Plug 'airblade/vim-gitgutter' " Shows a git diff in the gutter and stages/reverts hunks
-" Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-repeat' " Allow to use . for some other plugins
-Plug 'tpope/vim-commentary' " Add comments with gc
+
+" Elementary features """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'tpope/vim-sensible'   " Defaults everyone can agree on
+" Plug 'tpope/vim-eunuch'     " Vim sugar for the UNIX shell commands that need it the most
+Plug 'tpope/vim-surround'   " Surround objects with tags,{,[,( etc. using ys, cs, ds etc.
+Plug 'tpope/vim-repeat'     " Allows to use . for some other plugins
 Plug 'tpope/vim-unimpaired' " Mappings for complementary pairs of  commands
-" Plug 'tpope/vim-eunuch'
-Plug 'Shougo/vimproc.vim' "  Interactive command execution in Vim. Needed by ghcmod-vim
+Plug 'tpope/vim-commentary' " Add comments with gc
+Plug 'tpope/vim-vinegar'    " Enhances the netrw file browser
+
+" UI """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'bling/vim-airline'                " Statusline
+Plug 'edkolev/tmuxline.vim'             " Use the vim-airline status line in tmux
+" Plug 'edkolev/promptline.vim'         " Generate promt with airline colors
+Plug 'Yggdroot/indentLine'              " Display the indention levels with thin vertical lines
+Plug 'christoomey/vim-tmux-navigator'   " Seamless navigation between vim an tmux
+Plug 'benmills/vimux'                   " Send commands from vim to tmux
+Plug 'jpalardy/vim-slime'               " Send text to an REPL using tmux
+Plug 'yonchu/accelerated-smooth-scroll' " Smooth scrolling for <C-D>/<C-U> and <C-F>/<C-B>
+Plug 'mbbill/undotree'                  " Visualize vim's undo tree
+
+" Text manipulation """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'ntpeters/vim-better-whitespace' " Show and remove trailing whitespace
+Plug 'godlygeek/tabular'              " Align text
+Plug 'sirver/ultisnips'               " The ultimate snippet solution for Vim
+Plug 'honza/vim-snippets'             " Snippets
+
+" Git """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'tpope/vim-fugitive'       " Git Wrapper
+" Plug 'airblade/vim-gitgutter' " Shows a git diff in the gutter and stages/reverts hunks
+
+" Programming """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'Valloric/YouCompleteMe' " Code-completion
+Plug 'scrooloose/syntastic'   " Syntax checking
+
+" Haskell """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'Twinside/vim-hoogle'         " Haskell Hoogle Search
+Plug 'lukerandall/haskellmode-vim' " Haskell.
+Plug 'dag/vim2hs'                  " A collection of vimscripts for Haskell development
+Plug 'bitc/vim-hdevtools'          " Use Haskell hdevtools background server
+Plug 'eagletmt/ghcmod-vim'         " ghc-mod in vim
+Plug 'Shougo/vimproc.vim'          " Interactive command execution in Vim. Needed by ghcmod-vim
+Plug 'eagletmt/neco-ghc'           " A completion plugin for Haskell, using ghc-mod
+
+" Other """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plug 'scrooloose/nerdtree'
 " Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'editorconfig/editorconfig-vim'
@@ -304,42 +337,22 @@ Plug 'Shougo/vimproc.vim' "  Interactive command execution in Vim. Needed by ghc
 " Plug 'klen/python-mode', {'for': 'python'}
 " Plug 'terryma/vim-multiple-cursors'
 " Plug 'wting/rust.vim', {'for': 'rust'}
-" Plug 'edkolev/promptline.vim' " Generate promt with airline colors
-Plug 'edkolev/tmuxline.vim' " Use the vim-airline status line in tmux
-Plug 'christoomey/vim-tmux-navigator' " Seamless navigation between vim an tmux
-Plug 'benmills/vimux' " Send commands from vim to tmux
-Plug 'Valloric/YouCompleteMe' " Code-completion
-Plug 'yonchu/accelerated-smooth-scroll' " Smooth scrolling for <C-D>/<C-U> and <C-F>/<C-B>
-Plug 'Twinside/vim-hoogle' " Haskell Hoogle Search
-Plug 'lukerandall/haskellmode-vim' " Haskell.
-Plug 'dag/vim2hs' " A collection of vimscripts for Haskell development
-Plug 'bitc/vim-hdevtools' " Use Haskell hdevtools background server
-Plug 'eagletmt/ghcmod-vim' " ghc-mod in vim
-Plug 'eagletmt/neco-ghc' " A completion plugin for Haskell, using ghc-mod
-Plug 'scrooloose/syntastic' " Syntax checking
 " Plug 'majutsushi/tagbar' " Vim plugin that displays tags in a window, ordered by scope
-Plug 'ntpeters/vim-better-whitespace' " Show and remove trailing whitespace
-Plug 'godlygeek/tabular' " Align text
-Plug 'sirver/ultisnips' " The ultimate snippet solution for Vim
-Plug 'honza/vim-snippets' " Snippets
-Plug 'Yggdroot/indentLine' " Display the indention levels with thin vertical lines
-Plug 'jpalardy/vim-slime' " Send text to an REPL using tmux
-Plug 'mbbill/undotree' " Visualize vim's undo tree
 call plug#end()
 
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin Settings
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" vim-airline """""""""""""""""""""""""""
+" vim-airline """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tmuxline#enabled = 1
 let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
 let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
 
 
-" vimux """""""""""""""""""""""""""""""""
+" vimux """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Prompt for a command to run
 map <Leader>vp :VimuxPromptCommand<CR>
@@ -360,11 +373,11 @@ map <Leader>vx :VimuxInterruptRunner<CR>
 map <Leader>vz :call VimuxZoomRunner()<CR>
 
 
-" vim-fugitive """"""""""""""""""""""""""
+" vim-fugitive """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 command! Greview :Git! diff --staged
 
 
-" syntastic """""""""""""""""""""""""""""
+" syntastic """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:syntastic_warning_symbol = "⚠"
 let g:syntastic_error_symbol = "✗"
 " let g:syntastic_always_populate_loc_list = 1
@@ -376,48 +389,48 @@ let g:syntastic_error_symbol = "✗"
 " set statusline+=%*
 
 
-" haskellmode-vim  """"""""""""""""""""""
+" haskellmode-vim """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:haddock_browser="/usr/bin/firefox"
 
 
-" neco-ghc  """""""""""""""""""""""""""""
+" neco-ghc """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Disable haskell-vim omnifunc
 let g:haskellmode_completion_ghc = 0
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
 
-" YouCompleteMe  """"""""""""""""""""""""
+" YouCompleteMe """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "  For neco-ghc needed?
 let g:ycm_semantic_triggers = {'haskell' : ['.']}
 
 
-" indentLine  """""""""""""""""""""""""""
+" indentLine """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:indentLine_char = '┊'
 
 
-" vim-better-whitespace  """"""""""""""""
+" vim-better-whitespace """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Disable highlighting in current line in insertmode
 autocmd vimrc InsertEnter * :CurrentLineWhitespaceOff hard
 autocmd vimrc InsertLeave * :CurrentLineWhitespaceOn
 
 
-" vim-slime  """"""""""""""""""""""""""""
+" vim-slime """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": ":.2"}
 let g:slime_dont_ask_default = 1
 let g:slime_no_mappings = 0
 
 
-" vim2hs  """""""""""""""""""""""""""""""
+" vim2hs """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:haskell_conceal = 0
 let g:haskell_conceal_enumerations = 0
 let g:haskell_multiline_strings = 0
 
 
-" ultisnip  """""""""""""""""""""""""""""
+" ultisnip """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
