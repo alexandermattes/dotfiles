@@ -360,6 +360,10 @@ map <Leader>vx :VimuxInterruptRunner<CR>
 map <Leader>vz :call VimuxZoomRunner()<CR>
 
 
+" vim-fugitive """""""""""""""""""""""""""""""""
+command! Greview :Git! diff --staged
+
+
 " syntastic """""""""""""""""""""""""""""""""
 let g:syntastic_warning_symbol = "⚠"
 let g:syntastic_error_symbol = "✗"
