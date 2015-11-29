@@ -26,7 +26,7 @@ set history=1000
 let mapleader = ','
 let g:mapleader = ','
 
-" Use normal system clippboard (Ctrl-C, Ctrl-V)
+" Use normal system clipboard (Ctrl-C, Ctrl-V)
 set clipboard=unnamedplus
 
 " Enable mouse use in all modes
@@ -47,14 +47,11 @@ augroup vimrc
   autocmd!
 augroup END
 
-" Trigger autoread whenever a Buffer is switched or vim is refocused
-" au FocusGained,BufEnter * :silent! !
-
-" Reduce delay when pressing esc
+" Reduce delay when pressing <esc>
 set timeoutlen=1000
 set ttimeoutlen=0
 
-" Configure persistant undo
+" Configure persistent undo
 set undofile
 set undolevels=1000 "maximum number of changes that can be undone
 set undoreload=10000 "maximum number lines to save for undo on a buffer reload
@@ -261,7 +258,7 @@ highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 highlight CursorLineNr cterm=bold
 
 " Change highlighting of matching brackets
-hi MatchParen ctermfg=208  ctermbg=233 cterm=bold
+highlight MatchParen ctermfg=208  ctermbg=233 cterm=bold
 
 " How to display invisible charakter when 'list' ist set
 set listchars=tab:▸\ ,eol:¬
@@ -363,11 +360,11 @@ map <Leader>vx :VimuxInterruptRunner<CR>
 map <Leader>vz :call VimuxZoomRunner()<CR>
 
 
-" vim-fugitive """""""""""""""""""""""""""""""""
+" vim-fugitive """"""""""""""""""""""""""
 command! Greview :Git! diff --staged
 
 
-" syntastic """""""""""""""""""""""""""""""""
+" syntastic """""""""""""""""""""""""""""
 let g:syntastic_warning_symbol = "⚠"
 let g:syntastic_error_symbol = "✗"
 " let g:syntastic_always_populate_loc_list = 1
@@ -379,48 +376,48 @@ let g:syntastic_error_symbol = "✗"
 " set statusline+=%*
 
 
-" haskellmode-vim  """""""""""""""""""""""""""""""""
+" haskellmode-vim  """"""""""""""""""""""
 let g:haddock_browser="/usr/bin/firefox"
 
 
-" neco-ghc  """""""""""""""""""""""""""""""""
+" neco-ghc  """""""""""""""""""""""""""""
 
 " Disable haskell-vim omnifunc
 let g:haskellmode_completion_ghc = 0
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
 
-" YouCompleteMe  """""""""""""""""""""""""""""""""
+" YouCompleteMe  """"""""""""""""""""""""
 
 "  For neco-ghc needed?
 let g:ycm_semantic_triggers = {'haskell' : ['.']}
 
 
-" indentLine  """""""""""""""""""""""""""""""""
+" indentLine  """""""""""""""""""""""""""
 let g:indentLine_char = '┊'
 
 
-" vim-better-whitespace  """""""""""""""""""""""""""""""""
+" vim-better-whitespace  """"""""""""""""
 
 " Disable highlighting in current line in insertmode
 autocmd vimrc InsertEnter * :CurrentLineWhitespaceOff hard
 autocmd vimrc InsertLeave * :CurrentLineWhitespaceOn
 
 
-" vim-slime  """""""""""""""""""""""""""""""""
+" vim-slime  """"""""""""""""""""""""""""
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": ":.2"}
 let g:slime_dont_ask_default = 1
 let g:slime_no_mappings = 0
 
 
-" vim2hs  """""""""""""""""""""""""""""""""
+" vim2hs  """""""""""""""""""""""""""""""
 let g:haskell_conceal = 0
 let g:haskell_conceal_enumerations = 0
 let g:haskell_multiline_strings = 0
 
 
-" ultisnip  """""""""""""""""""""""""""""""""
+" ultisnip  """""""""""""""""""""""""""""
 " let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
