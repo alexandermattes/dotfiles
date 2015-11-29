@@ -139,7 +139,7 @@ map k gk
 " Temporarily disable search highlighting until the next search
 map <silent> <leader>/ :nohlsearch<cr>
 
-" " Easier Navigation between splits | Alternative to vim-tmux-navigator
+" Easier Navigation between splits | Alternative to vim-tmux-navigator
 " nnoremap <C-J> <C-W><C-J>
 " nnoremap <C-K> <C-W><C-K>
 " nnoremap <C-L> <C-W><C-L>
@@ -152,12 +152,12 @@ nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
 
 " Easier creation of splits
-nnoremap <leader>sp :split<cr>
-nnoremap <leader>vsp :vsplit<cr>
+" nnoremap <leader>sp :split<cr>
+" nnoremap <leader>vsp :vsplit<cr>
 
 " Easier handling of buffers
 nnoremap <leader>b :ls<CR>:b<Space>
-nnoremap <leader>ls :ls<cr>
+" nnoremap <leader>ls :ls<cr>
 
 " Easier handling of tabs
 nnoremap <leader>t :tabs<CR>:tab<Space>
@@ -171,6 +171,9 @@ nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 " Easier replacing
 nnoremap <leader>\ :%s//gc<Left><Left><Left>
 vnoremap <leader>\ :s/\%V/gc<Left><Left><Left>
+
+" Toggle spell checking
+nmap <silent> <leader>s :set spell!<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""
