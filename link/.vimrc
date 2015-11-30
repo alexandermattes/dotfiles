@@ -105,7 +105,7 @@ set wildignore=*.o,*~,*.pyc
 set noshowmode
 
 " Height of command bar
-set cmdheight=1
+set cmdheight=2
 
 " Always show status line
 set laststatus=2
