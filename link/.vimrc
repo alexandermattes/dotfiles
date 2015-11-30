@@ -284,7 +284,7 @@ call plug#begin('~/.vim/plugged')
 
 " Elementary features """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'tpope/vim-sensible'   " Defaults everyone can agree on
-" Plug 'tpope/vim-eunuch'     " Vim sugar for the UNIX shell commands that need it the most
+Plug 'tpope/vim-eunuch'     " Vim sugar for the UNIX shell commands that need it the most
 Plug 'tpope/vim-surround'   " Surround objects with tags,{,[,( etc. using ys, cs, ds etc.
 Plug 'tpope/vim-repeat'     " Allows to use . for some other plugins
 Plug 'tpope/vim-unimpaired' " Mappings for complementary pairs of  commands
@@ -301,32 +301,36 @@ Plug 'benmills/vimux'                   " Send commands from vim to tmux
 Plug 'jpalardy/vim-slime'               " Send text to an REPL using tmux
 Plug 'yonchu/accelerated-smooth-scroll' " Smooth scrolling for <C-D>/<C-U> and <C-F>/<C-B>
 Plug 'mbbill/undotree'                  " Visualize vim's undo tree
+" Plug 'majutsushi/tagbar'              " Vim plugin that displays tags in a window, ordered by scope
+" Plug 'scrooloose/nerdtree'            " A tree explorer plugin for vim
 
 " Text manipulation """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'ntpeters/vim-better-whitespace' " Show and remove trailing whitespace
-Plug 'godlygeek/tabular'              " Align text
-Plug 'sirver/ultisnips'               " The ultimate snippet solution for Vim
-Plug 'honza/vim-snippets'             " Snippets
+Plug 'ntpeters/vim-better-whitespace'  " Show and remove trailing whitespace
+Plug 'godlygeek/tabular'               " Align text
+Plug 'sirver/ultisnips'                " The ultimate snippet solution for Vim
+Plug 'honza/vim-snippets'              " Snippets
+Plug 'nelstrom/vim-visual-star-search' " Start a * or # search from a visual block
+Plug 'tpope/vim-abolish'               " easily search for, substitute, and abbreviate multiple variants of a word
 
 " Git """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'tpope/vim-fugitive'       " Git Wrapper
 " Plug 'airblade/vim-gitgutter' " Shows a git diff in the gutter and stages/reverts hunks
 
 " Programming """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'Valloric/YouCompleteMe' " Code-completion
-Plug 'scrooloose/syntastic'   " Syntax checking
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' } " Code-completion
+Plug 'scrooloose/syntastic'                             " Syntax checking
+Plug 'tpope/vim-dispatch'                               " asynchronous build and test dispatcher
 
 " Haskell """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'Twinside/vim-hoogle'         " Haskell Hoogle Search
-Plug 'lukerandall/haskellmode-vim' " Haskell.
-Plug 'dag/vim2hs'                  " A collection of vimscripts for Haskell development
-Plug 'bitc/vim-hdevtools'          " Use Haskell hdevtools background server
-Plug 'eagletmt/ghcmod-vim'         " ghc-mod in vim
-Plug 'Shougo/vimproc.vim'          " Interactive command execution in Vim. Needed by ghcmod-vim
-Plug 'eagletmt/neco-ghc'           " A completion plugin for Haskell, using ghc-mod
+Plug 'Twinside/vim-hoogle'                  " Haskell Hoogle Search
+Plug 'lukerandall/haskellmode-vim'          " Haskell.
+Plug 'dag/vim2hs'                           " A collection of vimscripts for Haskell development
+Plug 'bitc/vim-hdevtools'                   " Use Haskell hdevtools background server
+Plug 'eagletmt/ghcmod-vim'                  " ghc-mod in vim
+Plug 'Shougo/vimproc.vim', { 'do': 'make' } " Interactive command execution in Vim. Needed by ghcmod-vim
+Plug 'eagletmt/neco-ghc'                    " A completion plugin for Haskell, using ghc-mod
 
 " Other """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plug 'scrooloose/nerdtree'
 " Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'editorconfig/editorconfig-vim'
 " Plug 'fatih/vim-go', {'for': 'go'}
@@ -340,7 +344,6 @@ Plug 'eagletmt/neco-ghc'           " A completion plugin for Haskell, using ghc-
 " Plug 'klen/python-mode', {'for': 'python'}
 " Plug 'terryma/vim-multiple-cursors'
 " Plug 'wting/rust.vim', {'for': 'rust'}
-" Plug 'majutsushi/tagbar' " Vim plugin that displays tags in a window, ordered by scope
 call plug#end()
 
 
