@@ -142,10 +142,10 @@ map <silent> <leader>/ :nohlsearch<cr>
 " nnoremap <C-H> <C-W><C-H>
 
 " Easier saving of current window
-nnoremap <leader>w :w<cr>
+" nnoremap <leader>w :w<cr>
 
 " Easier closing of current window
-nnoremap <leader>q :q<cr>
+" nnoremap <leader>q :q<cr>
 
 " Easier creation of splits
 " nnoremap <leader>sp :split<cr>
@@ -170,6 +170,9 @@ vnoremap <leader>\ :s/\%V/gc<Left><Left><Left>
 
 " Toggle spell checking
 nnoremap <silent> <leader>s :set spell!<CR>
+
+" Visually select the text that was last edited/pasted
+nmap gV `[v`]
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
