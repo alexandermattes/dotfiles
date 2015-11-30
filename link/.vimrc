@@ -271,7 +271,7 @@ set listchars=tab:▸\ ,eol:¬
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set compiler for haskell files
-au BufEnter *.hs compiler ghc
+autocmd vimrc BufEnter *.hs compiler ghc
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -377,7 +377,7 @@ map <Leader>vz :call VimuxZoomRunner()<CR>
 
 
 " vim-fugitive """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-command! Greview :Git! diff --staged
+command! Greview :split | :Git! diff --staged
 
 
 " syntastic """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -416,8 +416,8 @@ let g:indentLine_char = '┊'
 " vim-better-whitespace """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Disable highlighting in current line in insertmode
-autocmd vimrc InsertEnter * :CurrentLineWhitespaceOff hard
-autocmd vimrc InsertLeave * :CurrentLineWhitespaceOn
+autocmd vimrc InsertEnter * :silent! CurrentLineWhitespaceOff hard
+autocmd vimrc InsertLeave * :silent! CurrentLineWhitespaceOn
 
 
 " vim-slime """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
