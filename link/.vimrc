@@ -269,11 +269,17 @@ set listchars=tab:▸\ ,eol:¬
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Advanced                                                               {{{1
+" => Haskell                                                                {{{1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set compiler for haskell files
 autocmd vimrc BufEnter *.hs compiler ghc
+
+" Use stylish haskell instead of par for haskell buffers
+" autocmd FileType haskell let &formatprg="stylish-haskell"
+
+" Call stylish-haskell
+command! Stylish :%!stylish-haskell
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
