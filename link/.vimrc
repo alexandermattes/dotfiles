@@ -292,19 +292,24 @@ Plug 'tpope/vim-repeat'     " Allows to use . for some other plugins
 Plug 'tpope/vim-unimpaired' " Mappings for complementary pairs of  commands
 Plug 'tpope/vim-commentary' " Add comments with gc
 Plug 'tpope/vim-vinegar'    " Enhances the netrw file browser
+Plug 'michaeljsmith/vim-indent-object' " defines a text object representing code at the same indent level
 
 " UI """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'bling/vim-airline'                " Statusline
-Plug 'edkolev/tmuxline.vim'             " Use the vim-airline status line in tmux
-" Plug 'edkolev/promptline.vim'         " Generate promt with airline colors
-Plug 'Yggdroot/indentLine'              " Display the indention levels with thin vertical lines
-Plug 'christoomey/vim-tmux-navigator'   " Seamless navigation between vim an tmux
-Plug 'benmills/vimux'                   " Send commands from vim to tmux
-Plug 'jpalardy/vim-slime'               " Send text to an REPL using tmux
-Plug 'yonchu/accelerated-smooth-scroll' " Smooth scrolling for <C-D>/<C-U> and <C-F>/<C-B>
-Plug 'mbbill/undotree'                  " Visualize vim's undo tree
-" Plug 'majutsushi/tagbar'              " Vim plugin that displays tags in a window, ordered by scope
-" Plug 'scrooloose/nerdtree'            " A tree explorer plugin for vim
+Plug 'bling/vim-airline'                 " Statusline
+Plug 'edkolev/tmuxline.vim'              " Use the vim-airline status line in tmux
+" Plug 'edkolev/promptline.vim'          " Generate promt with airline colors
+Plug 'Yggdroot/indentLine'               " Display the indention levels with thin vertical lines
+Plug 'christoomey/vim-tmux-navigator'    " Seamless navigation between vim an tmux
+Plug 'benmills/vimux'                    " Send commands from vim to tmux
+Plug 'jpalardy/vim-slime'                " Send text to an REPL using tmux
+Plug 'yonchu/accelerated-smooth-scroll'  " Smooth scrolling for <C-D>/<C-U> and <C-F>/<C-B>
+Plug 'mbbill/undotree'                   " Visualize vim's undo tree
+" Plug 'majutsushi/tagbar'               " Vim plugin that displays tags in a window, ordered by scope
+" Plug 'scrooloose/nerdtree'             " A tree explorer plugin for vim
+" Plug 'ervandew/supertab'               " Perform all your vim insert mode completions with Tab
+Plug 'moll/vim-bbye'                     " Delete buffers without closing windows
+" Plug 'easymotion/vim-easymotion'       " Vim motions on speed!
+" Plug 'ctrlpvim/ctrlp.vim'              " Fuzzy file, buffer, mru, tag, etc finder
 
 " Text manipulation """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'ntpeters/vim-better-whitespace'  " Show and remove trailing whitespace
@@ -316,36 +321,31 @@ Plug 'tpope/vim-abolish'               " easily search for, substitute, and abbr
 
 " Git """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'tpope/vim-fugitive'       " Git Wrapper
+Plug 'int3/vim-extradite'       " A git commit browser for vim. Extends fugitive
 " Plug 'airblade/vim-gitgutter' " Shows a git diff in the gutter and stages/reverts hunks
 
 " Programming """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' } " Code-completion
-Plug 'scrooloose/syntastic'                             " Syntax checking
-Plug 'tpope/vim-dispatch'                               " asynchronous build and test dispatcher
+Plug 'Valloric/YouCompleteMe', {'do': './install.py'} " Code-completion
+Plug 'scrooloose/syntastic'                           " Syntax checking
+Plug 'tpope/vim-dispatch'                             " asynchronous build and test dispatcher
 
 " Haskell """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'Twinside/vim-hoogle'                  " Haskell Hoogle Search
-Plug 'lukerandall/haskellmode-vim'          " Haskell.
-Plug 'dag/vim2hs'                           " A collection of vimscripts for Haskell development
-Plug 'bitc/vim-hdevtools'                   " Use Haskell hdevtools background server
-Plug 'eagletmt/ghcmod-vim'                  " ghc-mod in vim
-Plug 'Shougo/vimproc.vim', { 'do': 'make' } " Interactive command execution in Vim. Needed by ghcmod-vim
-Plug 'eagletmt/neco-ghc'                    " A completion plugin for Haskell, using ghc-mod
+Plug 'Twinside/vim-hoogle',         {'for': 'haskell'}                " Haskell Hoogle Search
+Plug 'lukerandall/haskellmode-vim', {'for': 'haskell'}                " Haskell.
+Plug 'dag/vim2hs',                  {'for': 'haskell'}                " A collection of vimscripts for Haskell development
+Plug 'bitc/vim-hdevtools',          {'for': 'haskell'}                " Use Haskell hdevtools background server
+Plug 'eagletmt/ghcmod-vim',         {'for': 'haskell'}                " ghc-mod in vim
+Plug 'Shougo/vimproc.vim',          {'for': 'haskell', 'do': 'make'}  " Interactive command execution in Vim. Needed by ghcmod-vim
+Plug 'eagletmt/neco-ghc',           {'for': 'haskell'}                " A completion plugin for Haskell, using ghc-mod
+
+" Java """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Python """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plug 'klen/python-mode', {'for': 'python'} " Vim python-mode. PyLint, Rope, Pydoc, breakpoints from box
 
 " Other """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'editorconfig/editorconfig-vim'
-" Plug 'fatih/vim-go', {'for': 'go'}
-" Plug 'nathanaelkane/vim-indent-guides'
-" Plug 'pangloss/vim-javascript', {'for': 'javascript'}
-" Plug 'mhinz/vim-signify'
-" Plug 'mattn/emmet-vim'
-" Plug 'mustache/vim-mustache-handlebars'
-" Plug 'chase/vim-ansible-yaml'
-" Plug 'wavded/vim-stylus'
-" Plug 'klen/python-mode', {'for': 'python'}
+" Plug 'nathanaelkane/vim-indent-guides' " visually displaying indent levels in code
 " Plug 'terryma/vim-multiple-cursors'
-" Plug 'wting/rust.vim', {'for': 'rust'}
 call plug#end()
 
 
