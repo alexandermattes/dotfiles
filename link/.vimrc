@@ -428,10 +428,24 @@ let g:haskellmode_completion_ghc = 0
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
 
+" Supertab """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" The same as used by YCM
+" let g:SuperTabDefaultCompletionType = '<C-n>'
+
 " YouCompleteMe """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" make YCM compatible with UltiSnips (using supertab)
+" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 
 "  For neco-ghc needed?
 let g:ycm_semantic_triggers = {'haskell' : ['.']}
+
+
+" ultisnip """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:UltiSnipsExpandTrigger = "<c-space>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 
 " indentLine """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -456,13 +470,6 @@ let g:slime_no_mappings = 0
 let g:haskell_conceal = 0
 let g:haskell_conceal_enumerations = 0
 let g:haskell_multiline_strings = 0
-
-
-" ultisnip """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-" let g:UltiSnipsEditSplit="vertical"
 
 
 " tabular """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
