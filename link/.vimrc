@@ -458,6 +458,19 @@ let g:haskell_multiline_strings = 0
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " let g:UltiSnipsEditSplit="vertical"
+
+
+" tabular """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Needs to be loaded after tabular
+function! LoadTabularPatterns()
+    AddTabularPattern! css_colon /:\zs/l0c1l1
+endfunction
+
+" Call function after startup
+autocmd vimrc VimEnter * call LoadTabularPatterns()
+
+
 " undotree """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <leader>u :UndotreeToggle<CR>
 
