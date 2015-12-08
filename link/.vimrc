@@ -311,20 +311,24 @@ Plug 'michaeljsmith/vim-indent-object' " defines a text object representing code
 
 " UI """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'bling/vim-airline'                 " Statusline
-Plug 'edkolev/tmuxline.vim'              " Use the vim-airline status line in tmux
-" Plug 'edkolev/promptline.vim'          " Generate promt with airline colors
 Plug 'Yggdroot/indentLine'               " Display the indention levels with thin vertical lines
+Plug 'yonchu/accelerated-smooth-scroll'  " Smooth scrolling for <C-D>/<C-U> and <C-F>/<C-B>
+Plug 'mbbill/undotree'                   " Visualize vim's undo tree
+Plug 'moll/vim-bbye'                     " Delete buffers without closing windows
+" Plug 'majutsushi/tagbar'               " Vim plugin that displays tags in a window, ordered by scope
+" Plug 'edkolev/promptline.vim'          " Generate promt with airline colors
+" Plug 'scrooloose/nerdtree'             " A tree explorer plugin for vim
+" Plug 'ervandew/supertab'               " Perform all your vim insert mode completions with Tab
+" Plug 'easymotion/vim-easymotion'       " Vim motions on speed!
+" Plug 'ctrlpvim/ctrlp.vim'              " Fuzzy file, buffer, mru, tag, etc finder
+" Plug 'nathanaelkane/vim-indent-guides' " visually displaying indent levels in code
+" Plug 'terryma/vim-multiple-cursors'    " True Sublime Text style multiple selections for Vim
+
+" Tmux """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'edkolev/tmuxline.vim'              " Use the vim-airline status line in tmux
 Plug 'christoomey/vim-tmux-navigator'    " Seamless navigation between vim an tmux
 Plug 'benmills/vimux'                    " Send commands from vim to tmux
 Plug 'jpalardy/vim-slime'                " Send text to an REPL using tmux
-Plug 'yonchu/accelerated-smooth-scroll'  " Smooth scrolling for <C-D>/<C-U> and <C-F>/<C-B>
-Plug 'mbbill/undotree'                   " Visualize vim's undo tree
-" Plug 'majutsushi/tagbar'               " Vim plugin that displays tags in a window, ordered by scope
-" Plug 'scrooloose/nerdtree'             " A tree explorer plugin for vim
-" Plug 'ervandew/supertab'               " Perform all your vim insert mode completions with Tab
-Plug 'moll/vim-bbye'                     " Delete buffers without closing windows
-" Plug 'easymotion/vim-easymotion'       " Vim motions on speed!
-" Plug 'ctrlpvim/ctrlp.vim'              " Fuzzy file, buffer, mru, tag, etc finder
 
 " Text manipulation """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'ntpeters/vim-better-whitespace'  " Show and remove trailing whitespace
@@ -333,6 +337,7 @@ Plug 'sirver/ultisnips'                " The ultimate snippet solution for Vim
 Plug 'honza/vim-snippets'              " Snippets
 Plug 'nelstrom/vim-visual-star-search' " Start a * or # search from a visual block
 Plug 'tpope/vim-abolish'               " easily search for, substitute, and abbreviate multiple variants of a word
+Plug 'tommcdo/vim-exchange'            " Easy text exchange operator for Vim: cx
 
 " Git """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'tpope/vim-fugitive'       " Git Wrapper
@@ -352,15 +357,15 @@ Plug 'bitc/vim-hdevtools',          {'for': 'haskell'}                " Use Hask
 Plug 'eagletmt/ghcmod-vim',         {'for': 'haskell'}                " ghc-mod in vim
 Plug 'Shougo/vimproc.vim',          {'for': 'haskell', 'do': 'make'}  " Interactive command execution in Vim. Needed by ghcmod-vim
 Plug 'eagletmt/neco-ghc',           {'for': 'haskell'}                " A completion plugin for Haskell, using ghc-mod
+Plug 'neovimhaskell/haskell-vim',   {'for': 'haskell'}                " Syntax Highlighting and Indentation for Haskell and Cabal
 
 " Java """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Python """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plug 'klen/python-mode', {'for': 'python'} " Vim python-mode. PyLint, Rope, Pydoc, breakpoints from box
 
-" Other """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plug 'nathanaelkane/vim-indent-guides' " visually displaying indent levels in code
-" Plug 'terryma/vim-multiple-cursors'
+" Latex """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 call plug#end()
 
 
