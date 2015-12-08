@@ -300,43 +300,43 @@ command! Stylish :%!stylish-haskell
 call plug#begin('~/.vim/plugged')
 
 " Elementary features """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'tpope/vim-sensible'   " Defaults everyone can agree on
-Plug 'tpope/vim-eunuch'     " Vim sugar for the UNIX shell commands that need it the most
-Plug 'tpope/vim-surround'   " Surround objects with tags,{,[,( etc. using ys, cs, ds etc.
-Plug 'tpope/vim-repeat'     " Allows to use . for some other plugins
-Plug 'tpope/vim-unimpaired' " Mappings for complementary pairs of  commands
-Plug 'tpope/vim-commentary' " Add comments with gc
-Plug 'tpope/vim-vinegar'    " Enhances the netrw file browser
+Plug 'tpope/vim-sensible'              " Defaults everyone can agree on
+Plug 'tpope/vim-eunuch'                " Vim sugar for the UNIX shell commands that need it the most
+Plug 'tpope/vim-surround'              " Surround objects with tags,{,[,( etc. using ys, cs, ds etc.
+Plug 'tpope/vim-repeat'                " Allows to use . for some other plugins
+Plug 'tpope/vim-unimpaired'            " Mappings for complementary pairs of  commands
+Plug 'tpope/vim-commentary'            " Add comments with gc
+Plug 'tpope/vim-vinegar'               " Enhances the netrw file browser
 Plug 'michaeljsmith/vim-indent-object' " defines a text object representing code at the same indent level
 
 " UI """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'bling/vim-airline'                 " Statusline
+" Plug 'edkolev/promptline.vim'          " Generate promt with airline colors
 Plug 'Yggdroot/indentLine'               " Display the indention levels with thin vertical lines
+" Plug 'nathanaelkane/vim-indent-guides' " visually displaying indent levels in code
 Plug 'yonchu/accelerated-smooth-scroll'  " Smooth scrolling for <C-D>/<C-U> and <C-F>/<C-B>
 Plug 'mbbill/undotree'                   " Visualize vim's undo tree
 Plug 'moll/vim-bbye'                     " Delete buffers without closing windows
 " Plug 'majutsushi/tagbar'               " Vim plugin that displays tags in a window, ordered by scope
-" Plug 'edkolev/promptline.vim'          " Generate promt with airline colors
 " Plug 'scrooloose/nerdtree'             " A tree explorer plugin for vim
-" Plug 'ervandew/supertab'               " Perform all your vim insert mode completions with Tab
 " Plug 'easymotion/vim-easymotion'       " Vim motions on speed!
 " Plug 'ctrlpvim/ctrlp.vim'              " Fuzzy file, buffer, mru, tag, etc finder
-" Plug 'nathanaelkane/vim-indent-guides' " visually displaying indent levels in code
 " Plug 'terryma/vim-multiple-cursors'    " True Sublime Text style multiple selections for Vim
 
 " Tmux """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'edkolev/tmuxline.vim'              " Use the vim-airline status line in tmux
-Plug 'christoomey/vim-tmux-navigator'    " Seamless navigation between vim an tmux
-Plug 'benmills/vimux'                    " Send commands from vim to tmux
-Plug 'jpalardy/vim-slime'                " Send text to an REPL using tmux
+Plug 'edkolev/tmuxline.vim'           " Use the vim-airline status line in tmux
+Plug 'christoomey/vim-tmux-navigator' " Seamless navigation between vim an tmux
+Plug 'benmills/vimux'                 " Send commands from vim to tmux
+Plug 'jpalardy/vim-slime'             " Send text to an REPL using tmux
 
 " Text manipulation """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'ntpeters/vim-better-whitespace'  " Show and remove trailing whitespace
 Plug 'godlygeek/tabular'               " Align text
 Plug 'sirver/ultisnips'                " The ultimate snippet solution for Vim
+" Plug 'ervandew/supertab'               " Perform all your vim insert mode completions with Tab
 Plug 'honza/vim-snippets'              " Snippets
 Plug 'nelstrom/vim-visual-star-search' " Start a * or # search from a visual block
-Plug 'tpope/vim-abolish'               " easily search for, substitute, and abbreviate multiple variants of a word
+Plug 'tpope/vim-abolish'               " easily search, substitute, abbreviate multiple variants of a word
 Plug 'tommcdo/vim-exchange'            " Easy text exchange operator for Vim: cx
 
 " Git """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
