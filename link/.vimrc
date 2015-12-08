@@ -255,17 +255,26 @@ colorscheme molokai
 " Tell vim what the background color looks like
 set background=dark
 
-" Only highlight the current line number, not the line itself
-highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
-
-" Make highlighted current line number bold
-highlight CursorLineNr cterm=bold
-
-" Change highlighting of matching brackets
-highlight MatchParen ctermfg=208  ctermbg=233 cterm=bold
-
 " How to display invisible character when 'list' is set
 set listchars=tab:▸\ ,eol:¬
+
+" Modify the colorscheme
+function! ModifyColorScheme()
+    " Only highlight the current line number, not the line itself
+    highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+
+    " Make highlighted current line number bold
+    highlight CursorLineNr cterm=bold
+
+    " Change highlighting of matching brackets
+    highlight MatchParen ctermfg=208  ctermbg=233 cterm=bold
+endfunction
+
+" Apply changes when .vimrc is read
+call ModifyColorScheme()
+
+" Apply changes after vim startup
+autocmd vimrc VimEnter * call ModifyColorScheme()
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
