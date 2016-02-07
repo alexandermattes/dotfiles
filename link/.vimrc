@@ -310,7 +310,8 @@ Plug 'tpope/vim-vinegar'               " Enhances the netrw file browser
 Plug 'michaeljsmith/vim-indent-object' " defines a text object representing code at the same indent level
 
 " UI """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'bling/vim-airline'                 " Statusline
+Plug 'vim-airline/vim-airline'           " Statusline
+Plug 'vim-airline/vim-airline-themes'    " Themes for statusline
 " Plug 'edkolev/promptline.vim'          " Generate promt with airline colors
 Plug 'Yggdroot/indentLine'               " Display the indention levels with thin vertical lines
 " Plug 'nathanaelkane/vim-indent-guides' " visually displaying indent levels in code
