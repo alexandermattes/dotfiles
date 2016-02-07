@@ -29,7 +29,7 @@ let mapleader = ','
 let g:mapleader = ','
 
 " Use normal system clipboard (Ctrl-C, Ctrl-V)
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 
 " Enable mouse use in all modes
 set mouse=a
@@ -285,10 +285,10 @@ autocmd vimrc VimEnter * call ModifyColorScheme()
 autocmd vimrc BufEnter *.hs compiler ghc
 
 " Use stylish haskell instead of par for haskell buffers
-" autocmd FileType haskell let &formatprg="stylish-haskell"
+autocmd vimrc FileType haskell let &formatprg="stylish-haskell"
 
 " Call stylish-haskell
-command! Stylish :%!stylish-haskell
+" command! Stylish :%!stylish-haskell
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -365,6 +365,7 @@ Plug 'neovimhaskell/haskell-vim',   {'for': 'haskell'}                " Syntax H
 " Plug 'klen/python-mode', {'for': 'python'} " Vim python-mode. PyLint, Rope, Pydoc, breakpoints from box
 
 " Latex """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plug 'lervag/vimtex' " A modern vim plugin for editing LaTeX files
 
 call plug#end()
 
@@ -408,13 +409,13 @@ command! Greview :split | :Git! diff --staged
 " syntastic """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:syntastic_warning_symbol = "⚠"
 let g:syntastic_error_symbol = "✗"
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 0
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 
 " haskellmode-vim """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -477,6 +478,7 @@ let g:haskell_multiline_strings = 0
 " Needs to be loaded after tabular
 function! LoadTabularPatterns()
     AddTabularPattern! css_colon /:\zs/l0c1l1
+    " AddTabularPattern! plug /{\|"
 endfunction
 
 " Call function after startup
