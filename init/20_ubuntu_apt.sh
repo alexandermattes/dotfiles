@@ -54,6 +54,7 @@ packages=(
   tmux
   tree
   vim
+  ncdu
 )
 
 packages=($(setdiff "${packages[*]}" "$(dpkg --get-selections | grep -v deinstall | awk '{print $1}')"))
