@@ -310,7 +310,8 @@ Plug 'tpope/vim-vinegar'               " Enhances the netrw file browser
 Plug 'michaeljsmith/vim-indent-object' " defines a text object representing code at the same indent level
 
 " UI """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'bling/vim-airline'                 " Statusline
+Plug 'vim-airline/vim-airline'           " Statusline
+Plug 'vim-airline/vim-airline-themes'    " Statusline themes
 " Plug 'edkolev/promptline.vim'          " Generate promt with airline colors
 Plug 'Yggdroot/indentLine'               " Display the indention levels with thin vertical lines
 " Plug 'nathanaelkane/vim-indent-guides' " visually displaying indent levels in code
@@ -345,9 +346,9 @@ Plug 'int3/vim-extradite'       " A git commit browser for vim. Extends fugitive
 " Plug 'airblade/vim-gitgutter' " Shows a git diff in the gutter and stages/reverts hunks
 
 " Programming """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'Valloric/YouCompleteMe', {'do': './install.py'} " Code-completion
-Plug 'scrooloose/syntastic'                           " Syntax checking
-Plug 'tpope/vim-dispatch'                             " asynchronous build and test dispatcher
+" Plug 'Valloric/YouCompleteMe', {'do': './install.py'} " Code-completion
+" Plug 'scrooloose/syntastic'                           " Syntax checking
+" Plug 'tpope/vim-dispatch'                             " asynchronous build and test dispatcher
 
 " Haskell """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'Twinside/vim-hoogle',         {'for': 'haskell'}                " Haskell Hoogle Search
