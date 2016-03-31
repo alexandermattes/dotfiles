@@ -13,5 +13,5 @@ alias search="apt search"
 # Fix colors in tmux
 alias tmux='TERM=xterm-256color tmux'
 
-# Add cabal to path
-PATH=/home/alex/.cabal/bin:$PATH:/home/alex/Programme/bin
+# Extend path
+PATH=~/.cabal/bin:$PATH:~/Programme/bin
