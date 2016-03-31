@@ -29,7 +29,7 @@ let mapleader = ','
 let g:mapleader = ','
 
 " Use normal system clipboard (Ctrl-C, Ctrl-V)
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 
 " Enable mouse use in all modes
 set mouse=a
