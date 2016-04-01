@@ -1,8 +1,3 @@
-# Files will be created with these permissions:
-# files 644 -rw-r--r-- (666 minus 022)
-# dirs  755 drwxr-xr-x (777 minus 022)
-umask 022
-
 # Always use color output for `ls`
 if is_osx; then
   alias ls="command ls -G"
@@ -30,6 +25,6 @@ alias fs="stat -f '%z bytes'"
 alias df="df -h"
 
 # # Create a new directory and enter it
-# function md() {
-#   mkdir -p "$@" && cd "$@"
-# }
+function md() {
+  mkdir -p "$@" && cd "$@"
+}
