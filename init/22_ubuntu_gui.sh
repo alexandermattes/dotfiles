@@ -5,10 +5,19 @@ is_ubuntu || return 1
 packages=(
   chromium-browser
   clementine
+  cryptkeeper
+  comix
+  xclip
+  emacs
+  encfs
+  gimp
   keepassx
   moc
+  python
   python-gpgme
+  speedcrunch
   vlc
+  wine
 )
 
 packages=($(setdiff "${packages[*]}" "$(dpkg --get-selections | grep -v deinstall | awk '{print $1}')"))
