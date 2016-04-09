@@ -18,4 +18,4 @@ export HISTFILESIZE=10000
 # alias r="fc -s"
 
 # Don't save history of the current session to file
-alias privatemode="unset HISTFILE"
+alias privatemode='unset HISTFILE; echo -e "\e[31mPrivate mode enabled: The history of this session will not be saved"'
