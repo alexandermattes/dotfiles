@@ -16,3 +16,6 @@ export HISTFILESIZE=10000
 
 # # Easily re-execute the last history command.
 # alias r="fc -s"
+
+# Don't save history of the current session to file
+alias privatemode="unset HISTFILE"
