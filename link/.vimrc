@@ -176,6 +176,8 @@ nnoremap <silent> <leader>s :set spell!<CR>
 " Visually select the text that was last edited/pasted
 nmap gV `[v`]
 
+" Force saving files that require root permission
+cnoremap w!! w !sudo tee > /dev/null %
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab ind indent related                                           {{{1
