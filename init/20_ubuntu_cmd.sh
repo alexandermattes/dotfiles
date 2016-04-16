@@ -18,13 +18,14 @@ packages=(
   htop
   mc
   ncdu
+  ppa-purge
+  ranger
   ranger
   sl
   telnet
   tmux
   tree
   vim
-  ranger
 )
 
 packages=($(setdiff "${packages[*]}" "$(dpkg --get-selections | grep -v deinstall | awk '{print $1}')"))
