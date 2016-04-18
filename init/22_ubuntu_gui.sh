@@ -11,6 +11,7 @@ packages=(
   emacs
   encfs
   gimp
+  gitg
   keepassx
   moc
   python
