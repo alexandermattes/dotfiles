@@ -24,6 +24,7 @@ packages=(
   sl
   telnet
   tmux
+  trash-cli
   tree
   vim
 )
