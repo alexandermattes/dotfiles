@@ -354,6 +354,7 @@ Plug 'int3/vim-extradite'       " A git commit browser for vim. Extends fugitive
 " Plug 'Valloric/YouCompleteMe', {'do': './install.py'} " Code-completion
 " Plug 'scrooloose/syntastic'                           " Syntax checking
 " Plug 'tpope/vim-dispatch'                             " asynchronous build and test dispatcher
+Plug 'JuliaLang/julia-vim'                              " Vim support for Julia
 
 " Haskell """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'Twinside/vim-hoogle',         {'for': 'haskell'}                " Haskell Hoogle Search
