@@ -19,6 +19,7 @@ packages=(
   speedcrunch
   vlc
   wine
+  xdotool
 )
 
 packages=($(setdiff "${packages[*]}" "$(dpkg --get-selections | grep -v deinstall | awk '{print $1}')"))
