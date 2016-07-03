@@ -318,7 +318,7 @@ Plug 'michaeljsmith/vim-indent-object' " defines a text object representing code
 Plug 'vim-airline/vim-airline'           " Statusline
 Plug 'vim-airline/vim-airline-themes'    " Statusline themes
 " Plug 'edkolev/promptline.vim'          " Generate promt with airline colors
-Plug 'Yggdroot/indentLine'               " Display the indention levels with thin vertical lines
+" Plug 'Yggdroot/indentLine'               " Display the indention levels with thin vertical lines
 " Plug 'nathanaelkane/vim-indent-guides' " visually displaying indent levels in code
 Plug 'yonchu/accelerated-smooth-scroll'  " Smooth scrolling for <C-D>/<C-U> and <C-F>/<C-B>
 Plug 'mbbill/undotree'                   " Visualize vim's undo tree
