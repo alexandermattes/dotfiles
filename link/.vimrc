@@ -372,7 +372,7 @@ Plug 'neovimhaskell/haskell-vim',   {'for': 'haskell'}                " Syntax H
 " Plug 'klen/python-mode', {'for': 'python'} " Vim python-mode. PyLint, Rope, Pydoc, breakpoints from box
 
 " Latex """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plug 'lervag/vimtex' " A modern vim plugin for editing LaTeX files
+Plug 'lervag/vimtex'               " A modern vim plugin for editing LaTeX files
 
 call plug#end()
 
@@ -495,6 +495,4 @@ autocmd vimrc VimEnter * call LoadTabularPatterns()
 
 " undotree """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <leader>u :UndotreeToggle<CR>
-
-
 
