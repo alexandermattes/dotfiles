@@ -12,3 +12,18 @@ else
 		end
 	end
 end
+
+# Run _init.jl if it exists
+macro init()
+	if isfile("_init.jl")
+		info("Found ", joinpath(pwd(),"_init.jl"))
+		include("_init.jl")
+	else
+		print("_init.jl not found in current directory: $(pwd()). Create one instead? (y/n) ")
+		rl = readline(STDIN)
+
+		if first(rl) == 'y'
+			edit("_init.jl")
+		end
+	end
+end

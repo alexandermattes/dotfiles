@@ -344,6 +344,7 @@ Plug 'honza/vim-snippets'              " Snippets
 Plug 'nelstrom/vim-visual-star-search' " Start a * or # search from a visual block
 Plug 'tpope/vim-abolish'               " easily search, substitute, abbreviate multiple variants of a word
 Plug 'tommcdo/vim-exchange'            " Easy text exchange operator for Vim: cx
+Plug 'dkprice/vim-easygrep'            " Fast and Easy Find and Replace Across Multiple Files
 
 " Git """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'tpope/vim-fugitive'       " Git Wrapper
