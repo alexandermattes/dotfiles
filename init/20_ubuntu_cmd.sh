@@ -22,7 +22,9 @@ packages=(
   ranger
   ranger
   sl
+  speedtest-cli
   telnet
+  thefuck
   tmux
   trash-cli
   tree

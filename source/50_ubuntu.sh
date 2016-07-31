@@ -15,3 +15,6 @@ alias tmux='TERM=xterm-256color tmux'
 
 # Extend path
 PATH=~/.cabal/bin:$PATH:~/Programme/bin
+
+# Fix last command via thefuck
+eval "$(thefuck --alias f)"
