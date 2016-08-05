@@ -18,6 +18,9 @@ runtime! plugin/sensible.vim
 " Set default encoding
 set encoding=utf8
 
+" Set default spell checking language
+set spelllang=en,de
+
 " Enable syntax highlighting
 syntax on
 
