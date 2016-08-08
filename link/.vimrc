@@ -323,6 +323,7 @@ Plug 'tpope/vim-unimpaired'            " Mappings for complementary pairs of  co
 Plug 'tpope/vim-commentary'            " Add comments with gc
 Plug 'tpope/vim-vinegar'               " Enhances the netrw file browser
 Plug 'michaeljsmith/vim-indent-object' " defines a text object representing code at the same indent level
+Plug 'szw/vim-g'                       " Quick Google lookup directly from Vim
 
 " UI """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'vim-airline/vim-airline'            " Statusline
