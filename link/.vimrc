@@ -140,6 +140,13 @@ endif
 map j gj
 map k gk
 
+" Sensible usage of Y
+noremap Y y$
+
+" Keep visual selection for easier indenting
+vnoremap < <gv
+vnoremap > >gv
+
 " Temporarily disable search highlighting until the next search
 map <silent> <leader>/ :nohlsearch<cr>
 
@@ -160,11 +167,11 @@ map <silent> <leader>/ :nohlsearch<cr>
 " nnoremap <leader>vsp :vsplit<cr>
 
 " Easier handling of buffers
-nnoremap <leader>b :ls<CR>:b<Space>
+" nnoremap <leader>b :ls<CR>:b<Space>
 " nnoremap <leader>ls :ls<cr>
 
 " Easier handling of tabs
-nnoremap <leader>t :tabs<CR>:tab<Space>
+" nnoremap <leader>t :tabs<CR>:tab<Space>
 
 " Easier use of explore
 " nnoremap <leader>e :Explore<cr>
@@ -318,19 +325,20 @@ Plug 'tpope/vim-vinegar'               " Enhances the netrw file browser
 Plug 'michaeljsmith/vim-indent-object' " defines a text object representing code at the same indent level
 
 " UI """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'vim-airline/vim-airline'           " Statusline
-Plug 'vim-airline/vim-airline-themes'    " Statusline themes
-" Plug 'edkolev/promptline.vim'          " Generate promt with airline colors
-" Plug 'Yggdroot/indentLine'               " Display the indention levels with thin vertical lines
-" Plug 'nathanaelkane/vim-indent-guides' " visually displaying indent levels in code
-Plug 'yonchu/accelerated-smooth-scroll'  " Smooth scrolling for <C-D>/<C-U> and <C-F>/<C-B>
-Plug 'mbbill/undotree'                   " Visualize vim's undo tree
-Plug 'moll/vim-bbye'                     " Delete buffers without closing windows
-" Plug 'majutsushi/tagbar'               " Vim plugin that displays tags in a window, ordered by scope
-" Plug 'scrooloose/nerdtree'             " A tree explorer plugin for vim
-" Plug 'easymotion/vim-easymotion'       " Vim motions on speed!
-" Plug 'ctrlpvim/ctrlp.vim'              " Fuzzy file, buffer, mru, tag, etc finder
-" Plug 'terryma/vim-multiple-cursors'    " True Sublime Text style multiple selections for Vim
+Plug 'vim-airline/vim-airline'            " Statusline
+Plug 'vim-airline/vim-airline-themes'     " Statusline themes
+Plug 'yonchu/accelerated-smooth-scroll'   " Smooth scrolling for <C-D>/<C-U> and <C-F>/<C-B>
+Plug 'mbbill/undotree'                    " Visualize vim's undo tree
+Plug 'moll/vim-bbye'                      " Delete buffers without closing windows
+Plug 'scrooloose/nerdtree'                " A tree explorer plugin for vim
+Plug 'Xuyuanp/nerdtree-git-plugin'        " A plugin of NERDTree showing git status
+Plug 'ctrlpvim/ctrlp.vim'                 " Fuzzy file, buffer, mru, tag, etc finder
+" Plug 'edkolev/promptline.vim'           " Generate promt with airline colors
+" Plug 'easymotion/vim-easymotion'        " Vim motions on speed!
+" Plug 'majutsushi/tagbar'                " Vim plugin that displays tags in a window, ordered by scope
+" Plug 'Yggdroot/indentLine'              " Display the indention levels with thin vertical lines
+" Plug 'nathanaelkane/vim-indent-guides'  " visually displaying indent levels in code
+" Plug 'terryma/vim-multiple-cursors'     " True Sublime Text style multiple selections for Vim
 
 " Tmux """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'edkolev/tmuxline.vim'           " Use the vim-airline status line in tmux
@@ -500,3 +508,17 @@ autocmd vimrc VimEnter * call LoadTabularPatterns()
 " undotree """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <leader>u :UndotreeToggle<CR>
 
+" NERDtree """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Toggle sidebar
+nnoremap <silent> <leader>e :NERDTreeToggle<CR>
+
+" Closes vim if NERDTree ist the only open buffer
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Ctrl-P """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ctrlp_map = '<leader>f'
+nnoremap <silent> <leader>b :CtrlPBuffer<CR>
+nnoremap <silent> <leader>m :CtrlPMRUFiles<CR>
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_clear_cache_on_exit = 0
