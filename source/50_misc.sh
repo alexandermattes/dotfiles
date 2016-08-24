@@ -43,6 +43,9 @@ alias gitg='LC_ALL=C gitg &> /dev/null &'
 # Fix centerim language
 alias centerim='LC_ALL=C centerim'
 
+# Disable flow-control (Ctrl-S and Ctrl-Q)
+stty -ixon -ixoff
+
 # ghc-pkg-reset
 # Removes all installed GHC/cabal packages, but not binaries, docs, etc.
 # Use this to get out of dependency hell and start over, at the cost of some rebuilding time.
