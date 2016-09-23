@@ -192,6 +192,9 @@ nmap gV `[v`]
 " Force saving files that require root permission
 cnoremap w!! w !sudo tee > /dev/null %
 
+" Enable folding with the spacebar
+nnoremap <space> za
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab ind indent related                                           {{{1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -409,6 +412,9 @@ map <Leader>vp :VimuxPromptCommand<CR>
 
 " Run last command executed by VimuxRunCommand
 map <Leader>vl :VimuxRunLastCommand<CR>
+
+" Run current line
+nnoremap <silent> <Leader>vc yy:silent! VimuxPromptCommand<CR><C-r>"<DEL><CR>
 
 " Inspect runner pane
 map <Leader>vi :VimuxInspectRunner<CR>
