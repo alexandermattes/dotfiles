@@ -1,20 +1,22 @@
-# Change language in bash to english
-export LANG=en_GB.UTF-8
-export LANGUAGE=
-export LC_CTYPE="de_DE.UTF-8"
-export LC_NUMERIC="de_DE.UTF-8"
-export LC_TIME="de_DE.UTF-8"
-export LC_COLLATE="de_DE.UTF-8"
-export LC_MONETARY="de_DE.UTF-8"
-export LC_MESSAGES="en_GB.UTF-8"
-export LC_PAPER="de_DE.UTF-8"
-export LC_NAME="de_DE.UTF-8"
-export LC_ADDRESS="de_DE.UTF-8"
-export LC_TELEPHONE="de_DE.UTF-8"
-export LC_MEASUREMENT="de_DE.UTF-8"
-export LC_IDENTIFICATION="de_DE.UTF-8"
-export LC_ALL=
-
+# Change language in bash to english/german mix
+if [[ $- == *i* ]] # only in interactive shells
+then
+    LANG=en_GB.UTF-8
+    export LANGUAGE=
+    export LC_CTYPE="de_DE.UTF-8"
+    export LC_NUMERIC="de_DE.UTF-8"
+    export LC_TIME="de_DE.UTF-8"
+    export LC_COLLATE="de_DE.UTF-8"
+    export LC_MONETARY="de_DE.UTF-8"
+    export LC_MESSAGES="en_GB.UTF-8"
+    export LC_PAPER="de_DE.UTF-8"
+    export LC_NAME="de_DE.UTF-8"
+    export LC_ADDRESS="de_DE.UTF-8"
+    export LC_TELEPHONE="de_DE.UTF-8"
+    export LC_MEASUREMENT="de_DE.UTF-8"
+    export LC_IDENTIFICATION="de_DE.UTF-8"
+    export LC_ALL=
+fi
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
