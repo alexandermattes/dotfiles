@@ -195,6 +195,11 @@ cnoremap w!! w !sudo tee > /dev/null %
 " Enable folding with the spacebar
 nnoremap <space> za
 
+" Fast switching to corresponding test/source file
+command! -nargs=* Es :call EditSubstitute("/test/src")
+command! -nargs=* Et :call EditSubstitute("/src/test")
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab ind indent related                                           {{{1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -241,6 +246,21 @@ function! Incr()
   normal `<
 endfunction
 vnoremap <C-a> :call Incr()<CR>
+
+" Copied from
+" https://stackoverflow.com/questions/9400966/is-there-a-vim-plugin-for-ruby-which-provides-a-switch-to-from-test-command-ou
+function! EditSubstitute(args)
+    if (len(a:args))<2
+        return
+    endif
+    let s:delimiter = (a:args[0])
+    let s:split = split(a:args,s:delimiter,1)[1:]
+    let s:fullpath = expand('%:p')
+    let s:bar = substitute(s:fullpath, s:split[0], s:split[1], "")
+    echo (s:bar)
+    silent execute('edit '.s:bar)
+endfunction
+command! -nargs=* E :call EditSubstitute(<q-args>)
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
