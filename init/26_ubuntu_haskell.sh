@@ -24,6 +24,9 @@ cabal install cabal
 
 # Install cabal packages
 cabalpackages=(
+  hasktags
+  hdevtools
+  ghc-mod
 )
 
 if (( ${#cabalpackages[@]} > 0 )); then
