@@ -61,6 +61,8 @@ set undofile
 set undolevels=1000 "maximum number of changes that can be undone
 set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 
+" Look for .tags file in parent directories
+set tags=./.tags;
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files                                                                  {{{1
@@ -365,9 +367,9 @@ Plug 'moll/vim-bbye'                      " Delete buffers without closing windo
 Plug 'scrooloose/nerdtree'                " A tree explorer plugin for vim
 Plug 'Xuyuanp/nerdtree-git-plugin'        " A plugin of NERDTree showing git status
 Plug 'ctrlpvim/ctrlp.vim'                 " Fuzzy file, buffer, mru, tag, etc finder
+Plug 'majutsushi/tagbar'                  " Vim plugin that displays tags in a window, ordered by scope
 " Plug 'edkolev/promptline.vim'           " Generate promt with airline colors
 " Plug 'easymotion/vim-easymotion'        " Vim motions on speed!
-" Plug 'majutsushi/tagbar'                " Vim plugin that displays tags in a window, ordered by scope
 " Plug 'Yggdroot/indentLine'              " Display the indention levels with thin vertical lines
 " Plug 'nathanaelkane/vim-indent-guides'  " visually displaying indent levels in code
 " Plug 'terryma/vim-multiple-cursors'     " True Sublime Text style multiple selections for Vim
@@ -400,6 +402,7 @@ Plug 'int3/vim-extradite'       " A git commit browser for vim. Extends fugitive
 " Plug 'scrooloose/syntastic'                           " Syntax checking
 " Plug 'tpope/vim-dispatch'                             " asynchronous build and test dispatcher
 Plug 'JuliaLang/julia-vim'                              " Vim support for Julia
+Plug 'craigemery/vim-autotag'                           " Automatically discover and properly update ctags files on save
 
 " Haskell """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'Twinside/vim-hoogle',         {'for': 'haskell'}                " Haskell Hoogle Search
@@ -568,5 +571,51 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:ctrlp_map = '<leader>f'
 nnoremap <silent> <leader>b :CtrlPBuffer<CR>
 nnoremap <silent> <leader>m :CtrlPMRUFiles<CR>
+nnoremap <silent> <leader>d :CtrlPTag<CR>
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_clear_cache_on_exit = 0
+
+" Tagbar """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <leader>t :TagbarToggle<CR>
+
+" Julia
+let g:tagbar_type_julia = {
+    \ 'ctagstype' : 'julia',
+    \ 'kinds'     : ['a:abstract', 'i:immutable', 't:type', 'f:function', 'm:macro']
+    \ }
+
+" Hasktags
+let g:tagbar_type_haskell = {
+    \ 'ctagsbin'  : 'hasktags',
+    \ 'ctagsargs' : '-x -c -o-',
+    \ 'kinds'     : [
+        \  'm:modules:0:1',
+        \  'd:data: 0:1',
+        \  'd_gadt: data gadt:0:1',
+        \  't:type names:0:1',
+        \  'nt:new types:0:1',
+        \  'c:classes:0:1',
+        \  'cons:constructors:1:1',
+        \  'c_gadt:constructor gadt:1:1',
+        \  'c_a:constructor accessors:1:1',
+        \  'ft:function types:1:1',
+        \  'fi:function implementations:0:1',
+        \  'o:others:0:1'
+    \ ],
+    \ 'sro'        : '.',
+    \ 'kind2scope' : {
+        \ 'm' : 'module',
+        \ 'c' : 'class',
+        \ 'd' : 'data',
+        \ 't' : 'type'
+    \ },
+    \ 'scope2kind' : {
+        \ 'module' : 'm',
+        \ 'class'  : 'c',
+        \ 'data'   : 'd',
+        \ 'type'   : 't'
+    \ }
+    \ }
+
+" Autotag """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:autotagTagsFile=".tags"
