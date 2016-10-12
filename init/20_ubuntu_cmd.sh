@@ -13,6 +13,7 @@ packages=(
   cmake
   cowsay
   curl
+  exuberant-ctags
   fonts-hack-ttf
   git
   htop
