@@ -19,7 +19,7 @@ fi
 #Update cabal
 PATH=~/.cabal/bin:$PATH
 cabal update
-cabal install cabal
+cabal install cabal-install
 
 
 # Install cabal packages
