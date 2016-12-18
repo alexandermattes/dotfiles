@@ -106,7 +106,7 @@ set showmatch
 " Tab completion Menu
 set wildmenu
 set wildmode=longest:full,full
-set wildignore=*.o,*~,*.pyc
+set wildignore+=*.o,*~,*.pyc,*.aux
 
 " Don't show the current mode (airline.vim takes care of us)
 set noshowmode
@@ -391,6 +391,7 @@ Plug 'tpope/vim-abolish'               " easily search, substitute, abbreviate m
 Plug 'tommcdo/vim-exchange'            " Easy text exchange operator for Vim: cx
 Plug 'dkprice/vim-easygrep'            " Fast and Easy Find and Replace Across Multiple Files
 Plug 'zef/vim-cycle'                   " Toggle words between pairs or lists of related words
+Plug 'vim-scripts/YankRing.vim'        " Maintains a history of previous yanks, changes and deletes
 
 " Git """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'tpope/vim-fugitive'       " Git Wrapper
@@ -537,17 +538,29 @@ let g:haskell_multiline_strings = 0
 " Needs to be loaded after tabular
 function! LoadTabularPatterns()
     AddTabularPattern! css_colon /:\zs/l0c1l1
+    AddTabularPattern! latex_matrix /&\|\\\\/r1
+    AddTabularPattern! latex_table /&\|\\\\/l1
     " AddTabularPattern! plug /{\|"
 endfunction
 
 " Call function after startup
 autocmd vimrc VimEnter * call LoadTabularPatterns()
 
+nnoremap <silent> <leader>am :Tabularize latex_matrix<CR>
+nnoremap <silent> <leader>at :Tabularize latex_table<CR>
+nnoremap <silent> <leader>a, :Tabularize /,/r0c1<CR>
+nnoremap <silent> <leader>aa :Tabularize assignment<CR>
+
 
 " undotree """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <leader>u :UndotreeToggle<CR>
 
+
 " vimtex """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Fix filetype for tex files
+let g:tex_flavor = "latex"
+
 augroup latexSurround
  autocmd!
  autocmd FileType tex call s:latexSurround()
@@ -559,6 +572,9 @@ function! s:latexSurround()
  let b:surround_{char2nr("c")} = "\\\1command: \1{\r}"
 endfunction
 
+let g:vimtex_quickfix_ignore_all_warnings=1
+
+
 " NERDtree """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Toggle sidebar
@@ -567,6 +583,7 @@ nnoremap <silent> <leader>e :NERDTreeToggle<CR>
 " Closes vim if NERDTree ist the only open buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+
 " Ctrl-P """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_map = '<leader>f'
 nnoremap <silent> <leader>b :CtrlPBuffer<CR>
@@ -574,6 +591,7 @@ nnoremap <silent> <leader>m :CtrlPMRUFiles<CR>
 nnoremap <silent> <leader>d :CtrlPTag<CR>
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_clear_cache_on_exit = 0
+
 
 " Tagbar """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <leader>t :TagbarToggle<CR>
@@ -617,5 +635,17 @@ let g:tagbar_type_haskell = {
     \ }
     \ }
 
+
 " Autotag """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:autotagTagsFile=".tags"
+
+
+" YankRing """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Toggle yankring window
+nnoremap <silent> <leader>y :YRShow<CR>
+
+" Fix Y mapping
+function! YRRunAfterMaps()
+    nnoremap Y   :<C-U>YRYankCount 'y$'<CR>
+endfunction
