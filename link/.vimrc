@@ -435,8 +435,8 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tmuxline#enabled = 1
 let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
 let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
-source ~/.vim/term_breeze.vim " TODO: Clean this up
-let g:airline_theme='term_breeze'
+" source ~/.vim/term_breeze.vim " TODO: This is broken
+let g:airline_theme='molokai'
 
 " vimux """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
